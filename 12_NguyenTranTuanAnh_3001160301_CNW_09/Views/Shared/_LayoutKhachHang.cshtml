@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/DangKy.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+   
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row bg-white">
+            <div class="col-md-2">
+                <img src="~/Content/HinhKTX/logoKTX.png" style="width:200px; height:100px" />
+            </div>
+            <div class="col-md-10 w-100">
+                <img src="~/Content/HinhKTX/banner.PNG" style="width:1234px; height:100px"/>
+            </div>
+        </div>
+        <div class="row bg-secondary " >         
+            <nav class="navbar navbar-expand-lg  bg-secondary">                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto" style="margin-left:250%">
+                        <li class="nav-item active">
+                            @Html.ActionLink("Trang chủ","Index","Home",null,new { @class="btn btn-danger"})
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>   
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>   
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>   
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>                                         
+                    </ul>
+                    
+                </div>
+            </nav>
+         </div>
+            
+        <div class="row ">
+             @RenderBody()
+        </div>
+       
+    </div>
+
+    <script src="~/Content/bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

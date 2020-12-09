@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "XemGioHang";
+    Layout = "~/Views/Shared/_LayoutKhachHang.cshtml";
+}
+
+@using _12_NguyenTranTuanAnh_3001160301_CNW_09.Models;
+@model GioHang
+
+<h2>Thông tin giỏ hàng</h2>
+
+<table class="table">
+    <tr>
+        <td>Mã Sách</td>
+        <td>Tên Sách</td>
+        <td>Ảnh</td>
+        <td>Số lượng</td>
+        <td>Đơn Giá</td>
+        <td>Thành Tiền</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+    @foreach (CartItem item in Model.dsSP)
+    {
+        <tr>
+            <td>@item.iMaSach</td>
+            <td>@item.sTenSach</td>
+            <td><img src="~/Content/Images/@item.sAnhBia" /> </td>
+            <td>@item.iSoluong</td>
+            <td>@item.dDonGia</td>
+            <td>@item.ThanhTien</td>
+            <td><a href="#">Chi tiết sách</a></td>
+            <td><a href="#">Xóa</a></td>
+            <td><a href="#" class="btn btn-secondary">Sửa</a></td>
+        </tr> 
+    }
+    <tr>
+        <td colspan="3">Tổng</td>
+
+        <td class="text-danger text-bold"> @Model.TongSLSP()</td>
+        <td class="text-danger text-bold"> @String.Format("{0:#,##}",Model.TongThanhTien())</td>
+        <td><a href="#" class="btn btn-danger">Xóa giỏ hàng</a></td>
+        <td colspan="2">
+            @Html.ActionLink("Đặt hàng", "XacNhanDonHang", "DatHang", new { @class="btn btn-danger"})
+        </td>
+    </tr>
+</table>

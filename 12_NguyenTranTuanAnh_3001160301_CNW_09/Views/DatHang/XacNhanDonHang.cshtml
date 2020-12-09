@@ -1,0 +1,61 @@
+﻿@using _12_NguyenTranTuanAnh_3001160301_CNW_09.Models;
+
+@{
+    ViewBag.Title = "XacNhanDonHang";
+    Layout = "~/Views/Shared/_LayoutKhachHang.cshtml";
+    tbl_KhachHang a = ViewBag.k;
+}
+
+@model GioHang
+
+<h2 style="text-align:center">Xác Nhận Đơn Hàng</h2>
+<form action="/DatHang/LuuDonHang" method="post">
+    <table style="display:inline" class="text-left">
+        <tr>
+            <td>Họ tên: @a.TenKH </td><td>Điện thoại: @a.SoDienThoai</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="text-left">Địa chỉ: @a.DiaChi</td>
+        </tr>
+        <tr>
+            <td>Ngày Đặt: @DateTime.Now.ToShortDateString() &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>Ngày Giao: <input type="date"  name="txtDate" /></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="text-center">
+                <table class="table" style="display:inline">
+                    <tr>
+                        <td colspan="4" class="text-danger">Thông tin đơn hàng</td>
+                    </tr>
+                    <tr>
+                        <td>Mã Sách</td>
+                        <td>Tên Sách</td>
+                        <td>Số Lượng</td>
+                        <td>Đơn Giá</td>
+                    </tr>
+                    @foreach (CartItem item in Model.dsSP)
+                    {
+                        <tr>
+                            <td>@item.iMaSach</td>
+                            <td>@item.sTenSach</td>
+                            <td>@item.iSoluong</td>
+                            <td>@item.dDonGia</td>
+                        </tr> 
+                    }
+                    <tr>
+                        <td colspan="2">Tổng SL:@Model.TongSLSP()</td>
+                        <td colspan="2">Tổng tiền: @Model.TongThanhTien()</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> <input type="submit" value="Đồng ý đặt hàng" /></td>
+        </tr>
+    </table>
+</form>
