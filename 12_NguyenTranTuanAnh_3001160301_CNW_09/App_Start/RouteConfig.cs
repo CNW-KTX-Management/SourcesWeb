@@ -16,7 +16,7 @@ namespace _12_NguyenTranTuanAnh_3001160301_CNW_09
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Create", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
             );
         }
     }
