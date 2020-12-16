@@ -16,13 +16,21 @@ namespace _12_NguyenTranTuanAnh_3001160301_CNW_09.Controllers
         {
             return View();
         }
+
+        [HttpGet]
         public ActionResult Create()
         {
            
             return View();
         }
 
-       
+        [HttpPost]
+        public ActionResult Information()
+        {
+
+            return View();
+        }
+
 
     }
 }
