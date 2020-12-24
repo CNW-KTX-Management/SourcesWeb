@@ -11,8 +11,8 @@ function loadData() {
         success: function (result) {
             var html = '';
             $.each(result, function (key, item) {
-                html += '<tr>';
-                html += '<td>' + item.ID + '</td>';
+                html +=  '<tr>';
+                html += '<td>' + item.Id + '</td>';
                 html += '<td>' + item.MSSV + '</td>';
                 html += '<td>' + item.Name + '</td>';
                 html += '<td>' + item.NgaySinh + '</td>';

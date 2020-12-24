@@ -3,73 +3,73 @@
     Layout = "~/Views/Shared/_LayoutKhachHang.cshtml";
 }
 
-<h2>Index</h2>
 <div class="container">
-    <h2>Danh sách sinh viên</h2>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Thêm món ăn mới</button>
-    <br />
-    <br />
-    <table class="table">
+
+    <h1 class="text-xl-center">Danh sách Sinh viên</h1>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="HideUpdate();">Thêm món ăn mới</button> <br /><br />
+    <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>MSSV</th>
-                <th>Name</th>
-                <th>NgaySinh</th>
-                <th>Phone</th>
-                <th>Passport</th>
-                <th>GioiTinh</th>
+                <th> ID </th>
+                <th> MSSV </th>
+                <th> Name </th>
+                <th> Phone </th>
+                <th> Ngày sinh </th>
+                <th> Passport </th>
+                <th> Giới tính </th>
+                <th>  </th>
             </tr>
         </thead>
-        <tbody class="tbody">
-        </tbody>
+        <tbody class="tbody"></tbody>
     </table>
 </div>
-<div class="modal" id="myModal" role="dialog" tabindex="-1" aria-labelledby="myModelLabel" aria-hidden="true">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title">Thêm mới</h4>
-        </div>
 
-        <div class="modal-body">
-            <form>
-                <div class="form-group">
-                    <label>MSSV</label>
-                    <input type="text" class="form-control" id="MSSV" placeholder="Mã sinh vien" />
-                </div>
 
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" class="form-control" id="Name" placeholder="Tên sinh viên" />
-                </div>
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><h4 class="modal-title">Thêm mới</h4></div>
 
-                <div class="form-group">
-                    <label>NgaySinh</label>
-                    <input type="text" class="form-control" id="NgaySinh" placeholder="Ngày sinh" />
-                </div>
-
-                <div class="form-group">
-                    <label>Phone</label>
-                    <input type="number" class="form-control" id="Phone" placeholder="Số điện thoại" />
-                </div>
-                <div class="form-group">
-                    <label>Passport</label>
-                    <input type="number" class="form-control" id="Passport" placeholder="Passport" />
-                </div>
-                <div class="form-group">
-                    <label>GioiTinh</label>
-                    <input type="number" class="form-control" id="GioiTinh" placeholder="Giới tính" />
-                </div>
-            </form>
-        </div>
-
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="btnAdd" onclick="return AddSinhVien();"> Add</button>
-            <button type="button" class="btn btn-primary" id="btnUpdate" onclick="return editFood()" style="display:none"> Update</button>
-            <button type="button" class="btn btn-default" id="btnClose" data-dismiss="modal"> Close</button>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="EmloyeeId">ID</label>
+                        <input type="text" class="form-control" id="ID" placeholder="Mã" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Name">MSSV</label>
+                        <input type="text" id="MSSV" placeholder="" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Type">Name</label>
+                        <input type="text" id="Name" placeholder="" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Price">Phone</label>
+                        <input type="text" id="Phone" placeholder="" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Price">NgaySinh</label>
+                        <input type="text" id="NgaySinh" placeholder="" />
+                    </div>                                     
+                    <div class="form-group">
+                        <label for="Price">Passport</label>
+                        <input type="text" id="Passport" placeholder="" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Price">GioiTinh</label>
+                        <input type="text" id="GioiTinh" placeholder="" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();"> Add </button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none" onclick="return Update()">Update</button>
+                <button type="button" class="btn btn-dark" id="close" data-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 </div>
 <script src="~/Content/bootstrap/js/jquery-3.3.1.min.js"></script>
 <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
-<script src="~/Scripts/JavaScript.js"></script>
+<script src="~/Content/bootstrap/js/Food.js"></script>
